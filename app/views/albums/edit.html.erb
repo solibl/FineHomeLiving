@@ -1,0 +1,19 @@
+<%= render '/errors' %>
+
+<%= form_for @album_edit, html: { multipart: true } do |f| %>
+
+<%= f.label :title %>:
+<%= f.text_field :title , placeholder: @album_edit.title%><br />
+
+<%= f.label :location %>:
+<%= f.text_field :location, placeholder: @album_edit.location%><br />
+
+<%= f.label :description %>:
+<%= f.text_field :album_description, placeholder: @album_edit.album_description %><br />
+
+<%= f.label :image %>:
+<%= image_tag @album_edit.image.url(:thumb) %> <br>
+<%= f.file_field :image %><br />
+
+<%= f.submit %>
+<% end %>

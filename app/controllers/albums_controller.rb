@@ -17,15 +17,21 @@ class AlbumsController < ApplicationController
 	end
 
 	def edit
-
+		@album_edit = Album.find(params[:id])
 	end
 
 	def show
-
+		@album = Album.find(params[:id])
 	end
 
 	def update
-
+		@album = Album.find(params[:id])
+		@album.assign_attributes(album_edit_params)
+		if @album.save
+		redirect_to album_path
+		else
+		redirect_to edit_album_path, :flash => { :error => @album.errors.full_messages}
+		end
 	end
 
 	def destroy
@@ -35,6 +41,10 @@ class AlbumsController < ApplicationController
 	private
 
 	def album_params
+		params.require(:album).permit(:title, :location, :album_description, :image)
+	end
+
+	def album_edit_params
 		params.require(:album).permit(:title, :location, :album_description, :image)
 	end
 end
