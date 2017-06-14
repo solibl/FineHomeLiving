@@ -22,6 +22,7 @@ class AlbumsController < ApplicationController
 
 	def show
 		@album = Album.find(params[:id])
+		@images = Image.where( :album_id => @album.id)
 	end
 
 	def update
