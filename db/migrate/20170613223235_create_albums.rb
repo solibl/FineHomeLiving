@@ -6,7 +6,7 @@ class CreateAlbums < ActiveRecord::Migration[5.1]
       t.text :album_description, null: false
       t.attachment :image
 
-      t.timestamps, null: false
+      t.timestamps
     end
   end
 end
