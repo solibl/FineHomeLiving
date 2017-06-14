@@ -1,12 +1,21 @@
-<%= form_for @album do |f| %>
-  <%= f.label :title %>:
-  <%= f.text_field :title %><br />
+<% if flash[:error] %>
+  <% flash[:error].each do |error|%>
+    <%= error %><br>
+  <% end %>
+<% end %>
 
-  <%= f.label :location %>:
-  <%= f.text_field :location %><br />
+<%= form_for @album, html: { multipart: true } do |f| %>
+<%= f.label :title %>:
+<%= f.text_field :title %><br />
 
-  <%= f.label :description %>:
-  <%= f.text_field :album_description %><br />
+<%= f.label :location %>:
+<%= f.text_field :location %><br />
 
-  <%= f.submit %>
+<%= f.label :description %>:
+<%= f.text_field :album_description %><br />
+
+<%= f.label :image %>:
+<%= f.file_field :image %><br />
+
+<%= f.submit %>
 <% end %>

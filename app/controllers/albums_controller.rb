@@ -4,7 +4,12 @@ class AlbumsController < ApplicationController
 	end
 
 	def create
-
+		@album = Album.new(album_params)
+		if @album.save
+			redirect_to albums_path
+		else
+			redirect_to new_album_path, :flash => { :error => @album.errors.full_messages}
+		end
 	end
 
 	def new
@@ -25,5 +30,11 @@ class AlbumsController < ApplicationController
 
 	def destroy
 
+	end
+
+	private
+
+	def album_params
+		params.require(:album).permit(:title, :location, :album_description, :image)
 	end
 end
