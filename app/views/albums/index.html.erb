@@ -1,6 +1,6 @@
 <% @albums.each do |album|%>
 	<%= image_tag album.image.url(:thumb) %> <br>
-	<%= album.title %> <br>
+	<%= link_to album.title, album_path(album) %> <br>
 	<%= album.location%> <br>
 	<%= album.album_description%> <br>
 	<%= link_to "Edit Album", edit_album_path(album) %>

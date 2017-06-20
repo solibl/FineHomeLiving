@@ -1,5 +1,5 @@
 <%= image_tag @album.image.url(:thumb) %> <br>
-<p><%= @album.title %></p> 
+<p>Title: <%= @album.title %></p> 
 <p>Location: <%= @album.location %></p> 
 <p>Description: <%= @album.album_description %></p> 
 <%= link_to "Add Images Here", new_album_image_path(@album)%>
@@ -8,4 +8,5 @@
 <p>Name: <%= image.name %></p>
 <p>Description: <%= image.description %></p>
 <%= image_tag image.image.url(:thumb) %> <br>
+<%= link_to "Edit Image Here", edit_album_image_path(@album, image)%>
 <% end %>
