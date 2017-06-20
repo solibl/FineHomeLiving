@@ -44,10 +44,10 @@ class AlbumsController < ApplicationController
 	private
 
 	def album_params
-		params.require(:album).permit(:title, :location, :album_description, :image)
+		params.require(:album).permit(:title, :location, :album_description, :project_year, :price, :image)
 	end
 
 	def album_edit_params
-		params.require(:album).permit(:title, :location, :album_description, :image)
+		params.require(:album).permit(:title, :location, :album_description, :project_year, :price, :image)
 	end
 end

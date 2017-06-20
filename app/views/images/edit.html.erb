@@ -9,7 +9,7 @@
 <%= f.text_field :album_description, placeholder: @image_edit.album_description %><br />
 
 <%= f.label :image %>:
-<%= image_tag @image_edit.image.url(:thumb) %> <br>
+<%= image_tag @image_edit.image.url(:large) %> <br>
 <%= f.file_field :image %><br />
 
 <%= f.submit %>
