@@ -15,6 +15,7 @@ class ImagesController < ApplicationController
 	end
 
 	def edit 
+		@album = Album.find(params[:album_id])
 		@image_edit = Image.find(params[:id])
 	end
 
@@ -24,12 +25,14 @@ class ImagesController < ApplicationController
 		if @image.save
 			redirect_to album_path(params[:album_id])
 		else
-			redirect_to edit_album_path, :flash => { :error => @album.errors.full_messages}
+			redirect_to edit_album_image_path, :flash => { :error => @image.errors.full_messages}
 		end	 
 	end
 
 	def destroy
-
+		@image = Image.find(params[:id])
+		@image.destroy
+		redirect_to album_path(params[:album_id])
 	end
 	
 	private
@@ -39,6 +42,6 @@ class ImagesController < ApplicationController
 	end
 
 	def image_edit_params
-		params.require(:image).permit(:name, :description)
+		params.require(:image).permit(:name, :description, :image)
 	end
 end

@@ -29,13 +29,17 @@ class AlbumsController < ApplicationController
 		@album = Album.find(params[:id])
 		@album.assign_attributes(album_edit_params)
 		if @album.save
-		redirect_to album_path
+			redirect_to album_path
 		else
-		redirect_to edit_album_path, :flash => { :error => @album.errors.full_messages}
+			redirect_to edit_album_path, :flash => { :error => @album.errors.full_messages}
 		end
 	end
 
 	def destroy
+		@images = Image.where("album_id = ?", params[:id])
+		@images.each do |image|
+			image.destroy
+		end
 		@album = Album.find(params[:id])
 		@album.destroy
 		redirect_to albums_path
