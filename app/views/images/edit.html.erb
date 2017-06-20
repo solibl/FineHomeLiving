@@ -1,0 +1,16 @@
+<%= render '/errors' %>
+
+<%= form_for @image_edit, url: album_image_path(@album, @image_edit), html: { multipart: true } do |f| %>
+
+<%= f.label :name %>:
+<%= f.text_field :name , placeholder: @image_edit.name %><br />
+
+<%= f.label :description %>:
+<%= f.text_field :description, placeholder: @image_edit.description %><br />
+
+<%= f.label :image %>:
+<%= image_tag @image_edit.image.url(:large) %> <br>
+<%= f.file_field :image %><br />
+
+<%= f.submit %>
+<% end %>
