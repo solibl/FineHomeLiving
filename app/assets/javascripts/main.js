@@ -1,9 +1,10 @@
 $(document).ready(function(){
 	$('.slider').slider({
-		height: 650,
+		height: 720,
 		transition: 800,
 		interval: 5000,
-		full_width: false
+		full_width: false,
+		indicators: false
 	});
 });
         

@@ -8,11 +8,14 @@
 	<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 <body>
-	<header>
+	<div class="navbar-fixed">
 		<nav>
-			<div class="nav-wrapper grey">
-			<%= link_to "Fine Home Living", root_path, :class => "brand-logo center white-text" %>
+			<div class="nav-wrapper black">
+				<%= link_to "Fine Home Living", root_path, :class => "brand-logo center white-text" %>
 				<ul id="nav-mobile" class="right hide-on-med-and-down">
+					<li><a href="" class="white-text">Log In</a></li>
+				</ul>
+				<ul id="nav-mobile" class="left hide-on-med-and-down">
 					<li><a href="" class="white-text">Preview</a></li>
 					<li><a href="" class="white-text">Projects</a></li>
 					<li><a href="" class="white-text">About</a></li>
@@ -20,7 +23,7 @@
 				</ul>
 			</div>
 		</nav>
-	</header>
+	</div>
 	<%= yield %>
 </body>
 </html>
