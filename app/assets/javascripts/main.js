@@ -1,8 +1,9 @@
 $(document).ready(function(){
 	$('.slider').slider({
-		height: 600,
-		transition: 1200,
-		interval: 4000
+		height: 650,
+		transition: 800,
+		interval: 5000,
+		full_width: false
 	});
 });
         
