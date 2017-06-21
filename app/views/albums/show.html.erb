@@ -1,4 +1,4 @@
-<%= image_tag @album.image.url(:large) %> <br>
+<%= image_tag @album.image.url(:medium) %> <br>
 <p>Title: <%= @album.title %></p> 
 <p>Project Year: <%= @album.project_year %></p>
 <p>Location: <%= @album.location %></p> 
@@ -9,7 +9,7 @@
 <% @images.each do |image| %> <br> <br>
 <p>Name: <%= image.name %></p>
 <p>Description: <%= image.description %></p>
-<%= image_tag image.image.url(:large) %> <br>
+<%= image_tag image.image.url(:medium) %> <br>
 <%= link_to "Edit Image Here", edit_album_image_path(@album, image)%>
 <%= link_to "Delete Image", album_image_path(@album, image), :method => 'delete' %>
 <% end %>

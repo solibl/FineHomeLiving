@@ -7,10 +7,19 @@
 	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 	<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
-<nav>
-
-</nav>
 <body>
+	<header>
+		<nav>
+			<div class="nav-wrapper grey">
+			<a href= <%= root_path %> class="brand-logo white-text"> Home </a>
+				<ul id="nav-mobile" class="right hide-on-med-and-down">
+					<li><a href="" class="white-text">Projects</a></li>
+					<li><a href="" class="white-text">About</a></li>
+					<li><a href="" class="white-text">Contact</a></li>
+				</ul>
+			</div>
+		</nav>
+	</header>
 	<%= yield %>
 </body>
 </html>

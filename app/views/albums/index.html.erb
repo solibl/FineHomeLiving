@@ -1,5 +1,5 @@
 <% @albums.each do |album|%>
-	<%= image_tag album.image.url(:large) %> <br>
+	<%= image_tag album.image.url(:medium) %> <br>
 	<p>Project: <%= link_to album.title, album_path(album) %></p> 
 	<p>Project Year: <%= album.project_year %> </p>  
 	<p>Price: <%= album.price %> </p> 

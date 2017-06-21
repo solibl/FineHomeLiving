@@ -1,0 +1,24 @@
+<div class="Preview">
+  <div class="slider">
+    <ul class="slides">
+      <% @albums.each do |album| %>
+      <li>
+        <img src= <%= album.image.url(:large) %> >
+        <div class="caption center-align">
+          <h3>FINE HOME LIVING</h3>
+          <h5 class="light grey-text text-lighten-3">THERE'S NO PLACE LIKE HOME</h5>
+        </div>
+      </li>
+      <% end %>
+      <% @images.each do |image| %>
+      <li>
+        <img src= <%= image.image.url(:large) %> >
+        <div class="caption center-align">
+          <h3>FINE HOME LIVING</h3>
+          <h5 class="light grey-text text-lighten-3">THERE'S NO PLACE LIKE HOME</h5>
+        </div>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
