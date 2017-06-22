@@ -18,7 +18,7 @@
 <%= f.text_field :album_description, placeholder: @album_edit.album_description %><br />
 
 <%= f.label :image %>:
-<%= image_tag @album_edit.image.url(:large) %> <br>
+<%= image_tag @album_edit.image.url(:medium) %> <br>
 <%= f.file_field :image %><br />
 
 <%= f.submit %>

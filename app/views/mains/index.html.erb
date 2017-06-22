@@ -1,0 +1,39 @@
+<div class="preview">
+  <div class="slider">
+    <ul class="slides">
+      <% @albums.each do |album| %>
+      <li>
+        <img src= <%= album.image.url(:large) %> >
+      </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+  <div class="projects">
+    <h1 class="title">Projects</h1>
+    <div class="cards">
+    <% @projects.each do |project|%>
+      <div class="card sticky-action col s4">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src= <%= project.image.url(:large) %> >
+          </div>
+          <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4"><%= project.title %><i class="material-icons right">more_vert</i></span>
+            <p><a href="#">This is a link</a></p>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+            <p>Here is some more information about this product that is only revealed once clicked on.</p>
+          </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="about">
+  <h1>About</h1>
+</div>
+
+<div class="contact">
+  <h1>Contact</h1>
+</div>
