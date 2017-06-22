@@ -2,6 +2,6 @@ class MainsController < ApplicationController
 	def index
 		@albums = Album.all
 		@images = Image.all
-		@projects = Album.where(id: 1..3)
+		@projects = Album.order("created_at DESC").limit(3)
 	end
 end
