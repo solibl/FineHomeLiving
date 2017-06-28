@@ -36,11 +36,21 @@
 }
 
 #about {
-    padding-top: 50px;
-    margin-top: -50px;
 }
 
 #contact {
     padding-top: 50px;
     margin-top: -50px;
+}
+
+.title {
+	font-family: "Time New Roman";
+}
+
+.about {
+	font-family: "Times New Roman";
+}
+
+.contact {
+	font-family: "Times New Roman";
 }

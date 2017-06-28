@@ -10,10 +10,10 @@
   </div>
 </div>
   <div id="projects">
-    <h1 class="title">Projects</h1>
+    <h2 class="title grey-text text-darken-1">Projects</h2>
     <div class="cards">
     <% @projects.each do |project|%>
-      <div class="card sticky-action col s4">
+      <div class="card stickycol s4">
           <div class="card-image waves-effect waves-block waves-light">
             <img class="activator" src= <%= project.image.url(:large) %> >
           </div>
@@ -31,9 +31,10 @@
 </div>
 
 <div id="about">
-  <h1>About</h1>
+<h1 class="about grey-text text-darken-1">About</h1>
+  <%= image_tag("logo.png")%>
 </div>
 
 <div id="contact">
-  <h1>Contact</h1>
+  <h1 class="about grey-text text-darken-1">Contact</h1>
 </div>
