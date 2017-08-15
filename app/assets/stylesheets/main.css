@@ -54,3 +54,19 @@
 .contact {
 	font-family: "Times New Roman";
 }
+
+.flexcontainer {
+	padding-top: 100px;
+	margin-top: -50px;
+	display: flex;
+	align-items: center;
+}
+
+.aboutlist {
+	padding-right: 50px;
+	padding-left: 25px;
+}
+
+.aboutimage {
+	padding-right: 25px;
+}
