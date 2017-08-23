@@ -28,17 +28,10 @@
 #preview {
     padding-top: 50px;
     margin-top: -50px;
+
 }
 
 #projects {
-    padding-top: 50px;
-    margin-top: -50px;
-}
-
-#about {
-}
-
-#contact {
     padding-top: 50px;
     margin-top: -50px;
 }
@@ -69,4 +62,44 @@
 
 .aboutimage {
 	padding-right: 25px;
+}
+
+.projectbanner {
+	position: relative;
+}
+
+.projectbanner h2 {
+	font-size: 400%;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding-top: 2%;
+}
+
+.projectbanner h3 {
+	position: relative;
+	padding-left: 600px;
+	padding-right: -600px;
+	font-size: 180%;
+	max-width: 100%;
+	font-style: italic;
+	margin-top: 0;
+}
+
+.projectbanner img {
+	position: absolute;
+	top: 0;
+    left: 0;
+    z-index: -2;
+}
+
+.cards {
+	width: 100%;
+}
+
+.aboutlist p {
+	text-align: center;
+}
+
+.aboutlist li {
+	text-align: center;
 }

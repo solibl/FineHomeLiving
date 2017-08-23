@@ -1,8 +1,8 @@
 $(document).ready(function(){
 	$('.slider').slider({
-		height: 720,
+		height: 750,
 		transition: 800,
-		interval: 5000,
+		interval: 4000,
 		full_width: false,
 		indicators: false
 	});
