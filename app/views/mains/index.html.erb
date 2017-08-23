@@ -10,7 +10,11 @@
   </div>
 </div>
 <div id="projects">
-  <h2 class="title grey-text text-darken-1">Projects</h2>
+  <div class="projectbanner">
+    <h2 class="title grey-text text-darken-1">Projects</h2>
+    <h3 class= "title grey-text text-darken-1">Interior Designs</h3>
+    <%=image_tag("ProjectBanner.jpg", style: "height:120%;width:100%", class:"background")%>
+  </div>
   <div class="cards">
     <% @projects.each do |project|%>
     <div class="card stickycol s4 hoverable">
@@ -60,8 +64,7 @@
 </div>
 
 <div id="contact">
-  <h1 class="about grey-text text-darken-1">Contact</h1>
   <div>
-    <%= image_tag("Profile.png", size: "350x500")%>
+    <%= image_tag("Profile.png", size: "350x500", class: "profile-picture")%>
   </div>
 </div>
