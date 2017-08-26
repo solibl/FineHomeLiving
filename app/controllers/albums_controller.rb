@@ -21,8 +21,21 @@ class AlbumsController < ApplicationController
 	end
 
 	def show
+		@albums = Album.all
 		@album = Album.find(params[:id])
 		@images = Image.where( :album_id => @album.id)
+		if params[:id] == 1
+			p @previous = @albums[@album.count-1]
+			p @next = @albums[1]
+		elsif params[:id] == @albums.count
+			current_album = @albums.index(@album)
+			p @previous = @albums[current_album-1]
+			p @next = @albums[0]
+		else
+			current_album = @albums.index(@album)
+			p @previous = @albums[current_album-1]
+			p @next = @albums[current_album+1]
+		end
 	end
 
 	def update

@@ -1,15 +1,30 @@
-<%= image_tag @album.image.url(:medium) %> <br>
-<p>Title: <%= @album.title %></p> 
-<p>Project Year: <%= @album.project_year %></p>
-<p>Location: <%= @album.location %></p> 
-<p>Price: <%= @album.price %></p>
-<p>Description: <%= @album.album_description %></p> 
-<%= link_to "Add Images Here", new_album_image_path(@album)%>
-
-<% @images.each do |image| %> <br> <br>
-<p>Name: <%= image.name %></p>
-<p>Description: <%= image.description %></p>
-<%= image_tag image.image.url(:medium) %> <br>
-<%= link_to "Edit Image Here", edit_album_image_path(@album, image)%>
-<%= link_to "Delete Image", album_image_path(@album, image), :method => 'delete' %>
-<% end %>
+<div class ="album-container">
+	<div class= "slider fullscreen">
+		<ul class= "slides">
+			<li>
+				<%= image_tag @album.image.url %>
+				<div class= "caption left-align">
+				<h3><%= @album.title %></h3>
+				<h5 class="light grey-text text-lighten-3">Project Year: <%= @album.project_year %></h5>
+				<h5 class="light grey-text text-lighten-3">Address: <%= @album.location %></h5>
+				<h5 class="light grey-text text-lighten-3">Price: <%= @album.price %></h5>
+				</div>
+			</li>
+			<% @images.each do |image| %>
+			<li>
+				<%= image_tag image.image.url%>
+				<div class= "caption center-align">
+				<h3>Name: <%= image.name %></h3>
+				<h5><%= image.description %></h5>
+				</div>
+			</li>
+			<% end %>
+		</ul>
+	</div>
+	<div class="previous-link">
+		
+	</div>
+	<div class="next-link">
+		
+	</div>
+</div>
