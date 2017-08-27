@@ -1,21 +1,21 @@
 <div class ="album-container">
-	<div class= "slider fullscreen">
+	<div class= "slider">
 		<ul class= "slides">
 			<li>
 				<%= image_tag @album.image.url %>
-				<div class= "caption left-align">
+				<div class= "caption center-align">
 				<h3><%= @album.title %></h3>
-				<h5 class="light grey-text text-lighten-3">Project Year: <%= @album.project_year %></h5>
-				<h5 class="light grey-text text-lighten-3">Address: <%= @album.location %></h5>
-				<h5 class="light grey-text text-lighten-3">Price: <%= @album.price %></h5>
+				<h5 class="light gray-text text-lighten-1">Project Year: <%= @album.project_year %></h5>
+				<h5 class="light gray-text text-lighten-1">Address: <%= @album.location %></h5>
+				<h5 class="light gray-text text-lighten-1">Price: <%= @album.price %></h5>
 				</div>
 			</li>
 			<% @images.each do |image| %>
 			<li>
-				<%= image_tag image.image.url%>
-				<div class= "caption center-align">
+				<%= image_tag image.image.url %>
+				<div class= "caption left-align">
 				<h3>Name: <%= image.name %></h3>
-				<h5><%= image.description %></h5>
+				<h5 class="light gray-text text-lighten-3"><%= image.description %></h5>
 				</div>
 			</li>
 			<% end %>
@@ -25,6 +25,14 @@
 		
 	</div>
 	<div class="next-link">
-		
+	
 	</div>
+
+</div>
+<div class= "image-container">
+	<% @images.each do |image| %>
+		<div class= "album-image">
+			<%= image_tag image.image.url(:large), size: "477x350", class:"materialboxed" %>
+		</div>
+	<% end %>
 </div>
