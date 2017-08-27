@@ -1,4 +1,5 @@
 class ImagesController < ApplicationController
+
 	def create
 		@album = Album.find(params[:album_id])
 		@image = Image.new(image_params)
