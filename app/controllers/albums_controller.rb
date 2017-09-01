@@ -25,10 +25,10 @@ class AlbumsController < ApplicationController
 		@albums = Album.all
 		@album = Album.find(params[:id])
 		@images = Image.where( :album_id => @album.id)
-		if params[:id] == 1
+		if params[:id] == @albums[0].id
 			@previous = @albums[@album.count-1]
 			@next = @albums[1]
-		elsif params[:id] == @albums.count
+		elsif params[:id] == @albums.last.id.to_s
 			current_album = @albums.index(@album)
 			@previous = @albums[current_album-1]
 			@next = @albums[0]

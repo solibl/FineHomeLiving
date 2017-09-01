@@ -23,7 +23,7 @@
       </div>
       <div class="card-content">
         <span class="card-title activator grey-text text-darken-4"><%= project.title %><i class="material-icons right">more_vert</i></span>
-          <p><a href="#">This is a link</a></p>
+          <%= link_to "Click here for more on this project", album_path(project), :class => "center blue-text text-darken-1" %>
       </div>
       <div class="card-reveal">
         <span class="card-title grey-text text-darken-4"><%= project.title %><i class="material-icons right">close</i></span>

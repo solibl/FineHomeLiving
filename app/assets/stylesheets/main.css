@@ -110,10 +110,34 @@
 .album-image {
 	padding: 0;
 	margin: 0;
-	min-width: 33%;
+	min-width: 100%;
 	display: inline-block;
 }
 
-.image-container {
-	min-width: 100%;
+.image-container img{
+	max-width: 100%;
+}
+
+.previous-link {
+    position: absolute;
+    right: 30px;
+    top: 670px;
+    z-index: 2;
+    font-size: 250%;
+}
+
+.previous-link a {
+	color: #fff;
+}
+
+.next-link {
+    position: absolute;
+    left: 30px;
+    top: 670px;
+    z-index: 2;
+    font-size: 250%;
+}
+
+.next-link a {
+	color: #fff;
 }
