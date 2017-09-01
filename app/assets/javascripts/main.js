@@ -6,5 +6,5 @@ $(document).ready(function(){
 		full_width: true,
 		indicators: false
 	});
+	$('.materialboxed').materialbox();
 });
-        

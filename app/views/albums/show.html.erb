@@ -20,19 +20,20 @@
 			</li>
 			<% end %>
 		</ul>
-	</div>
-	<div class="previous-link">
-		
-	</div>
-	<div class="next-link">
-	
-	</div>
-
-</div>
-<div class= "image-container">
-	<% @images.each do |image| %>
-		<div class= "album-image">
-			<%= image_tag image.image.url(:large), size: "477x350", class:"materialboxed" %>
+		<div class="previous-link">
+			<%= link_to @previous.title, album_path(@previous) %>
 		</div>
-	<% end %>
+		<div class="next-link">
+			<%= link_to @next.title, album_path(@next) %>
+		</div>
+	</div>
+</div>
+<div class= "image-section">
+	<div class= "album-image">
+		<% @images.each do |image| %>
+		<div class= "image-container">
+			<img class= "materialboxed" data-caption= "<%= image.name %>" src= <%= image.image.url %>>
+		</div>
+		<% end %>
+	</div>
 </div>
