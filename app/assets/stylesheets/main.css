@@ -1,6 +1,7 @@
 .card {
 	width: 33%;
-	max-height: 40%;
+	max-height: 50%;
+	min-height: 40%;
 	display: inline-block;
 }
 
@@ -93,6 +94,9 @@
 
 .cards {
 	width: 100%;
+	padding-left: 0.5%;
+	padding-top: 0.5%;
+	padding-bottom: 0.5%;
 }
 
 .aboutlist p {
@@ -144,4 +148,20 @@
 
 .login {
     margin-top: 150px;
+}
+
+.image-section {
+	min-width: 100%;
+}
+
+.imagecard {
+	min-height: 300px;
+}
+
+.materialboxed {
+	min-height: 200px;
+}
+
+.image-content {
+	max-height: 150px;
 }
