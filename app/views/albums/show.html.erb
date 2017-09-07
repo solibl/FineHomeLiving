@@ -29,11 +29,16 @@
 	</div>
 </div>
 <div class= "image-section">
-	<div class= "album-image">
-		<% @images.each do |image| %>
-		<div class= "image-container">
-			<img class= "materialboxed" data-caption= "<%= image.name %>" src= <%= image.image.url %>>
-		</div>
-		<% end %>
-	</div>
+	<div class="cards">
+    <% @images.each do |image|%>
+	    <div class="card stickycol s4 hoverable">
+	      <div class="card-image imagecard">
+	        <img class="materialboxed" data-caption= <%= image.description%> src= <%= image.image.url(:large) %> >
+	      </div>
+	      <div class='card-content imagecontent'>
+	      	<span class="card-title activator grey-text text-darken-4"><%= image.name %></span>
+	      </div>
+	    </div>
+	<% end %>
+  	</div>
 </div>
