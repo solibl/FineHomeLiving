@@ -1,5 +1,10 @@
 class ImagesController < ApplicationController
 
+	def index
+		@album = Album.find(params[:album_id])
+		@images = @album.images
+	end
+
 	def create
 		@album = Album.find(params[:album_id])
 		@image = Image.new(image_params)
@@ -12,6 +17,7 @@ class ImagesController < ApplicationController
 	end
 
 	def new
+		@album = Album.find(params[:album_id])
 		@image = Image.new
 	end
 
@@ -24,7 +30,7 @@ class ImagesController < ApplicationController
 		@image = Image.find(params[:id])
 		@image.assign_attributes(image_edit_params)
 		if @image.save
-			redirect_to album_path(params[:album_id])
+			redirect_to album_images_path(params[:album_id])
 		else
 			redirect_to edit_album_image_path, :flash => { :error => @image.errors.full_messages}
 		end	 
@@ -33,7 +39,7 @@ class ImagesController < ApplicationController
 	def destroy
 		@image = Image.find(params[:id])
 		@image.destroy
-		redirect_to album_path(params[:album_id])
+		redirect_to album_images_path(params[:album_id])
 	end
 	
 	private

@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
 
   resources :albums do
-  	resources :images, except: [:index, :show]
+  	resources :images, except: [:show]
   end
   
 end
