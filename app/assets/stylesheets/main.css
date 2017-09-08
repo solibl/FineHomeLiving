@@ -165,3 +165,42 @@
 .image-content {
 	max-height: 150px;
 }
+
+.album-links {
+	align-items: center;
+}
+
+.container {
+	width: 100%;
+}
+
+.album-container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	padding-top: 2%;
+	padding-bottom: 10%;
+}
+
+.album-picture {
+	position: absolute;
+	left: 1%;
+	padding-right: 2%;
+}
+
+.album-information {
+	position: relative;
+	left: 40%;
+	padding-left: 2%;
+	padding-right: 2%;
+}
+
+.album-links {
+	position: absolute;
+	right: 1%;
+	padding-right: 2%;
+}
+
+.container h3 {
+	text-align: center;
+}
