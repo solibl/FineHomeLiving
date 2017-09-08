@@ -1,6 +1,6 @@
 <div class="container">
 	<% @albums.each do |album|%>
-	<h3>Project: <%= link_to album.title, album_path(album) %></h3> 
+	<h3><%= link_to album.title, album_path(album) %></h3> 
 	<div class="album-container">
 		<div class="album-picture">
 			<%= image_tag album.image.url(:medium) %> <br>
@@ -14,6 +14,7 @@
 		<div class="album-links">
 			<p><%= link_to "Edit Album", edit_album_path(album) %></p>
 			<p><%= link_to "Add Images to Album", new_album_image_path(album) %></p>	
+			<p><%= link_to "View All Images", album_images_path(album) %></p>
 			<p><%= link_to "Delete Album", album_path(album), :method => 'delete' %></p>
 		</div>
 	</div>
