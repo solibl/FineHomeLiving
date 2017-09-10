@@ -1,24 +1,9 @@
-# README
+# Fine Home Living
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a portfolio web application that utilizes the ability for the user to upload projects that get sorted into albums or images. Each image is linked to an album. The customer facing UI is build as a dynamic single page website. The user UI is a multipage layout. 
 
-Things you may want to cover:
+The tech stack that was used for this project is Ruby on Rails, Bcrypt, MailForm, Paperclip, Heroku, AWS, and Materialize.
 
-* Ruby version
+## License
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
