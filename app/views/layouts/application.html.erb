@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FineHomeLiving</title>
+	<%= csrf_meta_tags %>
+
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+	<div class="navbar-fixed">
+		<nav>
+			<div class="nav-wrapper white">
+				<%= link_to "FINE HOME LIVING", root_path, :class => "brand-logo center grey-text text-darken-1" %>
+				<ul id="nav-mobile" class="right hide-on-med-and-down">
+				<% if logged_in? %>
+					<li><%= link_to "All Albums", albums_path, :class => "grey-text text-darken-1" %></li>
+					<li><%= link_to "Add New Album", new_album_path, :class => "grey-text text-darken-1" %></li>
+					<li><%= link_to "Log Out", logout_path, :class => "grey-text text-darken-1", method: :delete %></li>
+				<% else %>
+					<li><%= link_to "Log In", login_path, :class => "grey-text text-darken-1" %></li>
+				<% end %>
+				</ul>
+				<ul id="nav-mobile" class="left hide-on-med-and-down">
+					<li><a href="/#preview" class="grey-text text-darken-1">Preview</a></li>
+					<li><a href="/#projects" class="grey-text text-darken-1">Projects</a></li>
+					<li><a href="/#about" class="grey-text text-darken-1">About</a></li>
+					<li><a href="/#contact" class="grey-text text-darken-1">Contact</a></li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+	<%= yield %>
+</body>
+</html>

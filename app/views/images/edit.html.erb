@@ -1,0 +1,20 @@
+<div class= "image-form">
+	<%= render '/errors' %>
+
+	<%= form_for @image_edit, url: album_image_path(@album, @image_edit), html: { multipart: true } do |f| %>
+
+	<%= f.label :name %>:
+	<%= f.text_field :name , placeholder: @image_edit.name %>
+
+	<%= f.label :description %>:
+	<%= f.text_field :description, placeholder: @image_edit.description %>
+
+	<%= f.label :image %>:
+	<%= f.file_field :image %>
+
+	<%= image_tag @image_edit.image.url(:medium) %>
+
+	<p class= "center-align"><%= f.submit %></p>
+	<% end %>
+	
+</div>

@@ -1,0 +1,24 @@
+<div class="container">
+	<h3> <%= @album.title %></h3>
+	<p class= "center-align"><%= link_to "Add Images to Album", new_album_image_path(@album) %></p>
+	<div class ="album-cover">
+		<%= image_tag @album.image.url(:large)%>
+	</div>
+	<div class ="album-images">
+		<% @images.each do |image|%>
+		<div class = "album-containers">
+			<div class ="image-picture">
+				<%= image_tag image.image.url(:medium)%>
+			</div>
+			<div class ="image-information">
+				<p>Name: <%= image.name %></p>
+				<p>Description: <%= image.description %></p>
+			</div>
+			<div class ="image-links">
+				<p><%= link_to "Edit Image", edit_album_image_path(@album, image) %></p>
+				<p><%= link_to "Delete Image", album_image_path(@album, image), :method => 'delete'%></p>
+			</div>
+		</div>
+		<% end %>
+	</div>
+</div>

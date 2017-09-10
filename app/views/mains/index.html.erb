@@ -1,0 +1,104 @@
+<div id="preview">
+  <div class="slider">
+    <ul class="slides">
+      <% @albums.each do |album| %>
+      <li>
+        <img src= <%= album.image.url(:large) %> >
+      </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+<div id="projects">
+  <div class="projectbanner">
+    <h2 class="title grey-text text-darken-1">Projects</h2>
+    <%=image_tag("ProjectBanner.jpg", style: "height:120%;width:100%", class:"background")%>
+  </div>
+  <div class="cards">
+    <% @projects.each do |project|%>
+    <div class="card stickycol s4 hoverable">
+      <div class="card-image waves-effect waves-block waves-light">
+        <img class="activator" src= <%= project.image.url(:large) %> >
+      </div>
+      <div class="card-content">
+        <span class="card-title activator grey-text text-darken-4"><%= project.title %><i class="material-icons right">more_vert</i></span>
+          <%= link_to "Click here for more on this project", album_path(project), :class => "center blue-text text-darken-1" %>
+      </div>
+      <div class="card-reveal">
+        <span class="card-title grey-text text-darken-4"><%= project.title %><i class="material-icons right">close</i></span>
+          <ul>
+            <li>
+              Project Year: <%= project.project_year %>
+            </li>
+            <li>
+              Location: <%= project.location %>
+            </li>
+            <li>
+              Price: <%= project.price %>
+            </li>
+            <li>
+              Description: <%= project.album_description %>
+            </li>
+          </ul>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+<div id ="about">
+      <div class = "about-picture">
+        <%= image_tag("Profile.png", class: "profile-picture")%>
+      </div>
+      <div class = "about-list"> 
+        <h3 class = "grey-text text-darken-1">Elisa Chao</h3>
+        <p class = "grey-text text-darken-1">As a professional home stager and licensed Realtor®, I am here to help:</p>
+        <ul> 
+          <li class = "grey-text text-darken-1">Agents achieve their vision for a project by implementing different styles to target their key demographics.</li>
+          <li class = "grey-text text-darken-1">Sellers highlight and emphasize their home's best features.</li>
+          <li class = "grey-text text-darken-1">Buyers envision the space as a place they can truly call home.</li>
+        </ul>
+      </div>
+</div>
+
+<div id="contact">
+  <div class = "contact-container">
+    <div class = "contact-information">
+      <h4 class = "grey-text text-darken-1">Contact Us</h4>
+      <p class = "grey-text text-darken-1"> If you have any questions, please send me an email.</p>
+      <p class = "grey-text text-darken-1">You can also use the following links to contact me as well.</p> <br/> <br/>
+      <ul>
+        <li> Phone : (510) 366-7083</li>
+      </ul>
+      <span>
+      <a href="https://www.linkedin.com/in/elisa-chao-22288972/" class="fa fa-linkedin"></a>
+      <a href="https://www.facebook.com/finehomeliving" class="fa fa-facebook"></a>
+      <a href="https://www.instagram.com/finehomeliving/" class="fa fa-instagram"></a>
+      <a href="https://twitter.com/elisachao?lang=en" class="fa fa-twitter"></a>
+      </span>
+    </div>
+    <div class = "contact-form">
+      <%= form_for @contact, :url => sendemail_path do |f| %>
+        <%= f.label :name %>
+        <%= f.text_field :name, required: true %><br />
+
+        <%= f.label :email %>
+        <%= f.email_field :email, required: true %><br />
+        
+        <div class = ".input-field">
+        <%= f.label :message %>
+        <i class="material-icons prefix">mode_edit</i>
+        <%= f.text_area :message, class: "materialize-textarea" %><br />
+        </div>
+        
+        <div class = "hidden">
+          <%= f.label :nickname %>
+          <%= f.text_field :nickname, hint: "Leave this field blank" %><br />
+        </div>
+        <div class = "button">
+        <%= f.submit "Send Message" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

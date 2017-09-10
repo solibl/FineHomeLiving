@@ -1,0 +1,27 @@
+<div class ="album-form">
+	<%= render '/errors' %>
+	<%= form_for @album_edit, html: { multipart: true } do |f| %>
+
+	<%= f.label :title %>:
+	<%= f.text_field :title , placeholder: @album_edit.title%>
+
+	<%= f.label "Project Year:" %>:
+	<%= f.text_field :project_year, placeholder: @album_edit.project_year %>
+
+	<%= f.label :price %>:
+	<%= f.text_field :price, placeholder: @album_edit.price %>
+
+	<%= f.label :location %>:
+	<%= f.text_field :location, placeholder: @album_edit.location%>
+
+	<%= f.label :description %>:
+	<%= f.text_field :album_description, placeholder: @album_edit.album_description %>
+
+	<%= f.label :image %>:
+	<%= f.file_field :image %>
+
+	<%= image_tag @album_edit.image.url(:medium) %>
+
+	<p class="center-align"><%= f.submit %></p> 
+	<% end %>
+</div>
