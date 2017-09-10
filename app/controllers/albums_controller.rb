@@ -1,24 +1,41 @@
 class AlbumsController < ApplicationController
+include UsersHelper
 
 	def index
-		@albums = Album.all
+		if logged_in?
+			@albums = Album.all
+		else
+			redirect_to login_path
+		end
 	end
 
 	def create
-		@album = Album.new(album_params)
-		if @album.save
-			redirect_to albums_path
+		if logged_in?
+			@album = Album.new(album_params)
+			if @album.save
+				redirect_to albums_path
+			else
+				redirect_to new_album_path, :flash => { :error => @album.errors.full_messages}
+			end
 		else
-			redirect_to new_album_path, :flash => { :error => @album.errors.full_messages}
+			redirect_to login_path
 		end
 	end
 
 	def new
-		@album = Album.new
+		if logged_in?
+			@album = Album.new
+		else
+			redirect_to login_path
+		end
 	end
 
 	def edit
-		@album_edit = Album.find(params[:id])
+		if logged_in?
+			@album_edit = Album.find(params[:id])
+		else
+			redirect_to login_path
+		end
 	end
 
 	def show
@@ -40,23 +57,31 @@ class AlbumsController < ApplicationController
 	end
 
 	def update
-		@album = Album.find(params[:id])
-		@album.assign_attributes(album_edit_params)
-		if @album.save
-			redirect_to album_path
+		if logged_in?
+			@album = Album.find(params[:id])
+			@album.assign_attributes(album_edit_params)
+			if @album.save
+				redirect_to album_path
+			else
+				redirect_to edit_album_path, :flash => { :error => @album.errors.full_messages}
+			end
 		else
-			redirect_to edit_album_path, :flash => { :error => @album.errors.full_messages}
+			redirect_to login_path
 		end
 	end
 
 	def destroy
-		@images = Image.where("album_id = ?", params[:id])
-		@images.each do |image|
-			image.destroy
+		if logged_in?
+			@images = Image.where("album_id = ?", params[:id])
+			@images.each do |image|
+				image.destroy
+			end
+			@album = Album.find(params[:id])
+			@album.destroy
+			redirect_to albums_path
+		else
+			redirect_to login_path
 		end
-		@album = Album.find(params[:id])
-		@album.destroy
-		redirect_to albums_path
 	end
 
 	private
