@@ -10,9 +10,9 @@ class MainsController < ApplicationController
 		@contact = Contact.new
 		@contact.request = request
 		if @contact.deliver
-			flash.now[:error] = nil
+			flash.now[:success] = "The email has been sent"
 		else
-			flash.now[:error] = "Can not send message."
+			flash.now[:alert] = "Can not send message."
 			redirect_to root_path
 		end
 	end
