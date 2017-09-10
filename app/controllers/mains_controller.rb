@@ -9,7 +9,7 @@ class MainsController < ApplicationController
 	end
 
 	def create
-		from = Email.new(email: params[:contact]["email"])
+		from = Email.new(email: params[:contact]["name"] + "<" + params[:contact]["email"] + ">")
 		subject = 'From FineHomeLiving.com'
 		to = Email.new(email: 'brianleedongjun@gmail.com')
 		content = Content.new(type: 'text/plain', value: params[:contact]["message"])
