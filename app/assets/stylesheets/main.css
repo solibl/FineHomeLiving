@@ -389,3 +389,7 @@ body {
     margin-top: -50px;
 	text-align: center;
 }
+
+.email p {
+	font-size: 125%;
+}
