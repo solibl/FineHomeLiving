@@ -1,4 +1,7 @@
 class MainsController < ApplicationController
+	require 'sendgrid-ruby'
+	include SendGrid
+	
 	def index
 		@albums = Album.all
 		@images = Image.all
