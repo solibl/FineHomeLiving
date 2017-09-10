@@ -1,3 +1,7 @@
+body {
+	font-family: "Hoefler Text"
+}
+
 .card {
 	width: 33%;
 	max-height: 50%;
@@ -12,18 +16,12 @@
 
 .title {
 	text-align: center;
-}
-
-.about {
-	text-align: center;
-}
-
-.contact {
-	text-align: center;
+	font-family: "Hoefler Text";
 }
 
 .brand-logo {
-	font-family: "Times New Roman";
+	font-size: 0%;
+	font-family: "Hoefler Text";
 }
 
 #preview {
@@ -36,22 +34,15 @@
     margin-top: -50px;
 }
 
-.title {
-	font-family: "Time New Roman";
+#contact {
+	padding-top: 50px;
+	font-family: "Hoefler Text";
 }
 
-.about {
-	font-family: "Times New Roman";
-}
-
-.contact {
-	font-family: "Times New Roman";
-}
-
-.flexcontainer {
-	width: 100%;
-	padding-top: 100px;
-	margin-top: -50px;
+#about {
+	padding-top: 70px;
+    margin-top: -50px;
+    width: 100%;
 	display: inline-block;
 	text-align: center;
 }
@@ -92,8 +83,12 @@
 .cards {
 	width: 100%;
 	padding-left: 0.5%;
-	padding-top: 0.5%;
+	padding-top: 1%;
 	padding-bottom: 0.5%;
+}
+
+.card-title {
+	font-family: "Hoefler Text";
 }
 
 .aboutlist p {
@@ -273,42 +268,108 @@
 }
 
 .about-list {
-	font-family: "Times New Roman";
-	max-width: 25%;
-	position: absolute;
-	left: 5%;
+	text-align: left;
+	font-family: "Hoefler Text";
+	max-width: 100%;
+	margin-top: 10%;
+	margin-left: 2%;
 }
 
 .about-list p {
 	font-size: 125%;
 }
 
-.about-list h3 {
-	padding-top: 10%;
-	padding-bottom: 25%;
-}
-
-.about-picture img{
-	max-width: 31%;
-	min-width: 31%;
-	max-height: 80%;
-	position: absolute;
-	left: 34%; 
-}
-
-.about-motto {
-	font-family: "New Times Roman";
-	max-width: 25%;
-	position: absolute;
-	right: 5%;
-	padding-top: 10%;
-}
-
-.about-motto li {
+.about-list li {
 	font-size: 125%;
+	padding-bottom: 2%;
 }
 
-.about-motto h3 {
-	font-family: "Snell Roundhand";
-	padding-top: 15%;
+.about-picture {
+	display: inline-block;
+	max-width: 30%;
+	float: left;
+	margin-left: 10%;
+	margin-right: 5%;
+}
+
+.about-picture img {
+	max-width: 80%;
+}
+
+.contact-container {
+	width: 100%;
+	display: inline-block;
+	text-align: center;
+}
+
+.contact-information {
+	float: left;
+	position: relative;
+	width: 50%;
+	padding-top: 5%;
+	font-size: 125%;
+	font-family: "Hoefler Text";
+}
+
+.contact-information span {
+	margin-top: 15%;
+}
+
+.contact-form {
+	width: 50%;
+	float: right;
+	position: relative;
+	right: 5%;
+	padding-top: 5%;
+	padding-left: 5%;
+	padding-right: 5%;
+	padding-bottom: 5%;
+	text-align: left;
+}
+
+.contact-form label {
+	font-size: 150%;
+}
+
+
+.button {
+	text-align: center;
+}
+
+.fa {
+    padding: 20px;
+    font-size: 40px;
+    width: 60px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+    margin: 2%;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+
+.fa-linkedin {
+	background: #007bb5;
+	color: white;
+}
+
+.fa-instagram {
+	background: #125688;
+	color: white;
+}
+
+.hidden {
+	display: none;
 }

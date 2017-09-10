@@ -21,10 +21,10 @@
 			<% end %>
 		</ul>
 		<div class="previous-link">
-			<%= link_to @previous.title, album_path(@previous) %>
+			<%= link_to @previous.title + " >>", album_path(@previous) %>
 		</div>
 		<div class="next-link">
-			<%= link_to @next.title, album_path(@next) %>
+			<%= link_to "<< " + @next.title, album_path(@next) %>
 		</div>
 	</div>
 </div>

@@ -12,7 +12,6 @@
 <div id="projects">
   <div class="projectbanner">
     <h2 class="title grey-text text-darken-1">Projects</h2>
-    <h3 class= "title grey-text text-darken-1">Interior Designs</h3>
     <%=image_tag("ProjectBanner.jpg", style: "height:120%;width:100%", class:"background")%>
   </div>
   <div class="cards">
@@ -47,25 +46,59 @@
   </div>
 </div>
 
-<div id="about">
-  <div class ="flexcontainer">
-    <div class = "about-list"> 
-      <h3 class = "grey-text text-darken-1">Elisa Chao</h3>
-      <p>As a professional home stager and licensed Realtor®, I am here to help:</p>
-    </div>
-    <div class = "about-picture">
-      <%= image_tag("Profile.png", size: "500x750", class: "profile-picture")%>
-    </div>
-    <div class = "about-motto">
-      <ul> 
-        <li>Agents achieve their vision for a project by implementing different styles to target their key demographics.</li>
-        <li>Sellers highlight and emphasize their home's best features.</li>
-        <li>Buyers envision the space as a place they can truly call home.</li>
-      </ul>
-      <h3 class = "grey-text text-darken-1">"There's No Place Like Home"</h3>
-    </div>
-  </div>
+<div id ="about">
+      <div class = "about-picture">
+        <%= image_tag("Profile.png", class: "profile-picture")%>
+      </div>
+      <div class = "about-list"> 
+        <h3 class = "grey-text text-darken-1">Elisa Chao</h3>
+        <p class = "grey-text text-darken-1">As a professional home stager and licensed Realtor®, I am here to help:</p>
+        <ul> 
+          <li class = "grey-text text-darken-1">Agents achieve their vision for a project by implementing different styles to target their key demographics.</li>
+          <li class = "grey-text text-darken-1">Sellers highlight and emphasize their home's best features.</li>
+          <li class = "grey-text text-darken-1">Buyers envision the space as a place they can truly call home.</li>
+        </ul>
+      </div>
 </div>
 
 <div id="contact">
+  <div class = "contact-container">
+    <div class = "contact-information">
+      <h4 class = "grey-text text-darken-1">Contact Us</h4>
+      <p class = "grey-text text-darken-1"> If you have any questions, please send me an email.</p>
+      <p class = "grey-text text-darken-1">You can also use the following links to contact me as well.</p> <br/> <br/>
+      <ul>
+        <li> Phone : (510) 366-7083</li>
+      </ul>
+      <span>
+      <a href="https://www.linkedin.com/in/elisa-chao-22288972/" class="fa fa-linkedin"></a>
+      <a href="https://www.facebook.com/finehomeliving" class="fa fa-facebook"></a>
+      <a href="https://www.instagram.com/finehomeliving/" class="fa fa-instagram"></a>
+      <a href="https://twitter.com/elisachao?lang=en" class="fa fa-twitter"></a>
+      </span>
+    </div>
+    <div class = "contact-form">
+      <%= form_for @contact, :url => sendemail_path do |f| %>
+        <%= f.label :name %>
+        <%= f.text_field :name, required: true %><br />
+
+        <%= f.label :email %>
+        <%= f.email_field :email, required: true %><br />
+        
+        <div class = ".input-field">
+        <%= f.label :message %>
+        <i class="material-icons prefix">mode_edit</i>
+        <%= f.text_area :message, class: "materialize-textarea" %><br />
+        </div>
+        
+        <div class = "hidden">
+          <%= f.label :nickname %>
+          <%= f.text_field :nickname, hint: "Leave this field blank" %><br />
+        </div>
+        <div class = "button">
+        <%= f.submit "Send Message" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
