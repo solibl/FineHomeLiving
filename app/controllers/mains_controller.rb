@@ -14,7 +14,7 @@ class MainsController < ApplicationController
 		else
 			from = Email.new(email: params[:contact]["email"])
 			subject = params[:contact]["name"]+' from FineHomeLiving.com'
-			to = Email.new(email: 'brianleedongjun@gmail.com')
+			to = Email.new(email: 'echao160@gmail.com')
 			content = Content.new(type: 'text/plain', value: params[:contact]["message"])
 			mail = Mail.new(from, subject, to, content)
 
