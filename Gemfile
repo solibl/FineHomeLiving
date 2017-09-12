@@ -33,6 +33,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 gem 'mail_form', '~> 1.5', '>= 1.5.1'
 gem 'sendgrid-ruby'
+gem 'aws-sdk', '~> 2.3'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
