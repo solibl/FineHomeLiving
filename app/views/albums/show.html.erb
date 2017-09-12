@@ -32,10 +32,11 @@
     <% @images.each do |image|%>
 	    <div class="card stickycol s4 hoverable">
 	      <div class="card-image imagecard">
-	        <img class="materialboxed" data-caption= <%= image.description %> src= <%= image.image.url(:large) %> >
+	        <img class="materialboxed" src= <%= image.image.url(:large) %> >
 	      </div>
 	      <div class='card-content imagecontent'>
 	      	<span class="card-title grey-text text-darken-4"><%= image.name %></span>
+	      	<span class="card-title grey-text text-darken-4"><%= image.description %></span>
 	      </div>
 	    </div>
 	<% end %>
